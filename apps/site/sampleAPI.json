@@ -1,0 +1,73 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Fake Online REST API for Testing and Prototyping",
+    "version": "1.0.0",
+    "title": "JSON Placeholder"
+  },
+  "host": "gist.githubusercontent.com",
+  "tags": [
+    {
+      "name": "posts"
+    }
+  ],
+  "schemes": ["https"],
+  "paths": {
+    "/mann1996/9802ab9f499c075e449babce1af24f8b/raw/1ed7648757aef0515bffa9d4d60c2f700b089967/accordion_data.json": {
+      "get": {
+        "tags": ["posts"],
+        "operationId": "getPosts",
+        "summary": "Get all available posts",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "type": "integer",
+            "description": "Filter by post ID",
+            "required": false
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "type": "integer",
+            "description": "Filter by user ID",
+            "required": false
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Post"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Post": {
+      "title": "The Items of the Accordion",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "text"],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "NotFoundError": {
+      "type": "object"
+    }
+  }
+}

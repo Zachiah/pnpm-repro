@@ -1,0 +1,56 @@
+{
+  "name": "@saas-ui/modal",
+  "version": "2.2.9",
+  "description": "Modal Component",
+  "source": "src/index.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.modern.js"
+    },
+    "./src": {
+      "default": "./src/index.ts"
+    }
+  },
+  "main": "src/index.ts",
+  "scripts": {
+    "clean": "rimraf --no-glob ./dist",
+    "build": "JSX=1 tsup src/index.ts --dts",
+    "typecheck": "tsc --noEmit"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "chakra-ui",
+    "design-system",
+    "react-components",
+    "uikit",
+    "accessible",
+    "components",
+    "emotion",
+    "library",
+    "design-system"
+  ],
+  "storybook": {
+    "title": "Saas UI",
+    "url": "https://storybook.saas-ui.dev"
+  },
+  "dependencies": {
+    "@chakra-ui/modal": "2.2.9",
+    "@saas-ui/provider": "1.1.8"
+  },
+  "devDependencies": {
+    "@saas-ui/test-utils": "2.2.4"
+  },
+  "peerDependencies": {
+    "react": "18.2.0"
+  }
+}
